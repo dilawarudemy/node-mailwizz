@@ -6,7 +6,13 @@ class Lists extends Request {
     constructor(config) {
         super(config);
     }
+getListFields(listUid) {
+        this.method = Request.Type.GET;
+        this.url = `${path}/${listUid}/fields`;
+        this.data = {   };
 
+        return this.send();
+    }
     getLists(page, perPage) {
         this.method = Request.Type.GET;
         this.url = path;
